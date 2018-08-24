@@ -1337,6 +1337,9 @@ namespace Werewolf_Node
                         //if (AllowThief)
                         //    rolesToAssign.Add(role);
                         break;
+                    case IRole.Executrix:
+                        //not implemented yet
+                        break;
                     default:
                         rolesToAssign.Add(role);
                         break;
@@ -1370,7 +1373,7 @@ namespace Werewolf_Node
 
                 var balanced = false;
                 var attempts = 0;
-                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief };
+                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.Executrix };
 
                 do
                 {
@@ -1417,7 +1420,7 @@ namespace Werewolf_Node
                     //make sure that we have at least two teams
                     if (
                         rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner && x != IRole.Thief) //make sure we have at least one enemy
+                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner && x != IRole.Thief && x != IRole.Executrix) //make sure we have at least one enemy
                     )
                         balanced = true;
                     //else, redo role assignment. better to rely on randomness, than trying to fix it
@@ -1449,13 +1452,13 @@ namespace Werewolf_Node
 
 #if DEBUG
                 //force roles for testing
-                rolesToAssign[0] = IRole.Thief;
-                rolesToAssign[1] = IRole.SerialKiller;
+                rolesToAssign[0] = IRole.Executrix;
+                rolesToAssign[1] = IRole.Wolf;
                 rolesToAssign[2] = IRole.Villager;
                 if (rolesToAssign.Count >= 4)
-                    rolesToAssign[3] = IRole.Villager;
+                    rolesToAssign[3] = IRole.Mason;
                 if (rolesToAssign.Count >= 5)
-                    rolesToAssign[4] = IRole.Villager;
+                    rolesToAssign[4] = IRole.Mason;
 #endif
 
 
@@ -1463,6 +1466,7 @@ namespace Werewolf_Node
                 for (var i = 0; i < Players.Count; i++)
                 {
                     Players[i].PlayerRole = rolesToAssign[i];
+                    if (rolesToAssign[i] == IRole.Executrix) Players[i].RoleModel = ChooseRandomPlayerId(Players[i]);
                 }
 
                 SetRoleAttributes();
@@ -1567,6 +1571,11 @@ namespace Werewolf_Node
                         p.HasDayAction = false;
                         p.Team = ITeam.SerialKiller;
                         break;
+                    case IRole.Executrix:
+                        p.HasDayAction = false;
+                        p.HasNightAction = false;
+                        p.Team = ITeam.Executrix;
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -1629,6 +1638,11 @@ namespace Werewolf_Node
                             return GetLocaleString("RoleInfoThiefFull");
                         else
                             return GetLocaleString("RoleInfoThief");
+                    case IRole.Executrix:
+                        msg = GetLocaleString("RoleInfoExecutrix");
+                        msg += GetLocaleString("ExecutrixTarget", Players?.First(y => y.Id == (Players?.First(x => !x.IsDead && x.PlayerRole == IRole.Executrix).RoleModel)).GetName());
+                        return msg;
+
                     default:
                         return GetLocaleString($"RoleInfo{role}");
                 }
@@ -1663,6 +1677,16 @@ namespace Werewolf_Node
                     var beholder = Players.FirstOrDefault(x => x.PlayerRole == IRole.Beholder & !x.IsDead);
                     if (beholder != null)
                         Send(GetLocaleString("BeholderNewSeer", $"{aps.GetName()}", ds?.GetName() ?? GetDescription(IRole.Seer)), beholder.Id);
+                }
+            }
+
+            var executrix = Players.FirstOrDefault(x => x.PlayerRole == IRole.Executrix && !x.IsDead);
+            if (executrix != null && (!checkbitten || !executrix.Bitten))
+            {
+                var deadTarget = Players.FirstOrDefault(x => x.Id == executrix.RoleModel && x.IsDead);
+                if (deadTarget != null) // her role model died, but not by lynching
+                {
+                    ExecutrixTargetDied(executrix, deadTarget, false);
                 }
             }
 
@@ -2085,6 +2109,11 @@ namespace Werewolf_Node
                             p.HasNightAction = true;
                             p.HasDayAction = false;
                             break;
+                        case IRole.Executrix:
+                            p.Team = ITeam.Executrix;
+                            p.HasNightAction = false;
+                            p.HasDayAction = false;
+                            break;
                         default:
                             throw new ArgumentOutOfRangeException();
                     }
@@ -2220,6 +2249,11 @@ namespace Werewolf_Node
                     thief.HasNightAction = true;
                     thief.HasDayAction = false;
                     thief.Team = ITeam.SerialKiller;
+                    break;
+                case IRole.Executrix:
+                    thief.HasNightAction = false;
+                    thief.HasDayAction = false;
+                    thief.Team = ITeam.Executrix;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -2617,6 +2651,12 @@ namespace Werewolf_Node
                             case IRole.Hunter:
                                 HunterFinalShot(lynched, KillMthd.Lynch);
                                 break;
+                        }
+
+                        var executrix = Players.FirstOrDefault(x => x.PlayerRole == IRole.Executrix && !x.IsDead && x.RoleModel == lynched.Id);
+                        if (executrix != null)
+                        {
+                            ExecutrixTargetDied(executrix, lynched, true);
                         }
 
                         //update the database
@@ -3509,6 +3549,9 @@ namespace Werewolf_Node
                                 case IRole.Pacifist:
                                     ConvertToCult(target, voteCult, Settings.PacifistConversionChance);
                                     break;
+                                case IRole.Executrix:
+                                    ConvertToCult(target, voteCult, Settings.ExecutrixConversionChance);
+                                    break;
                                 default:
                                     ConvertToCult(target, voteCult);
                                     break;
@@ -4041,7 +4084,7 @@ namespace Werewolf_Node
                     return DoGameEnd(ITeam.NoOne);
                 case 1:
                     var p = alivePlayers.FirstOrDefault();
-                    if (p.PlayerRole == IRole.Tanner || p.PlayerRole == IRole.Sorcerer || p.PlayerRole == IRole.Thief)
+                    if (p.PlayerRole == IRole.Tanner || p.PlayerRole == IRole.Sorcerer || p.PlayerRole == IRole.Thief || p.PlayerRole == IRole.Executrix) // tho im not sure how executrix should be the last player standing...
                         return DoGameEnd(ITeam.NoOne);
                     else
                         return DoGameEnd(p.Team);
@@ -4050,7 +4093,7 @@ namespace Werewolf_Node
                     if (alivePlayers.All(x => x.InLove))
                         return DoGameEnd(ITeam.Lovers);
                     //check for Tanner + Sorcerer + Thief
-                    if (alivePlayers.Select(x => x.PlayerRole).All(x => new IRole[] { IRole.Sorcerer, IRole.Tanner, IRole.Thief }.Contains(x)))
+                    if (alivePlayers.Select(x => x.PlayerRole).All(x => new IRole[] { IRole.Sorcerer, IRole.Tanner, IRole.Thief, IRole.Executrix }.Contains(x)))
                         return DoGameEnd(ITeam.NoOne);
                     //check for Hunter + SK / Wolf
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Hunter))
@@ -4251,6 +4294,37 @@ namespace Werewolf_Node
                                         AddAchievement(sorc, AchievementsReworked.TimeToRetire);
                                         deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName());
                                     }
+                                }
+                                // executrix and tanner/sorcerer/thief
+                                else if (alives.Any(x => x.PlayerRole == IRole.Executrix))
+                                {
+                                    var executrix = alives.First(x => x.PlayerRole == IRole.Executrix);
+                                    var other = alives.First(x => x.PlayerRole != IRole.Executrix);
+
+                                    switch (other.PlayerRole)
+                                    {
+                                        case IRole.Tanner:
+                                            DBKill(other, other, KillMthd.Suicide);
+                                            other.IsDead = true;
+                                            other.TimeDied = DateTime.Now;
+                                            deathmessage = GetLocaleString("TannerEnd", other.GetName()) + Environment.NewLine;
+                                            break;
+
+                                        case IRole.Sorcerer:
+                                            deathmessage = GetLocaleString("SorcererEnd", other.GetName()) + Environment.NewLine;
+                                            AddAchievement(other, AchievementsReworked.TimeToRetire);
+                                            break;
+
+                                        case IRole.Thief:
+                                            deathmessage = GetLocaleString("ThiefEnd", other.GetName()) + Environment.NewLine;
+                                            break;
+                                    }
+
+                                    //need to send death message before executrix message
+                                    SendWithQueue(deathmessage);
+                                    deathmessage = null;
+                                    ExecutrixTargetDied(executrix, other, false); // other SHOULD be the target...
+
                                 }
                                 break;
 
@@ -4853,6 +4927,39 @@ namespace Werewolf_Node
                 }
             }
         }
+
+        public void ExecutrixTargetDied(IPlayer executrix, IPlayer target, bool lynched)
+        {
+            if (lynched)
+            {
+                SendWithQueue(GetLocaleString("ExecutrixSuccess", executrix.GetName(), target.GetName()));
+                executrix.Won = true;
+                if (executrix.LoverId != 0) Players.First(x => x.Id == executrix.LoverId).Won = true;
+
+                using (var db = new WWContext())
+                {
+                    var p = GetDBGamePlayer(executrix, db);
+                    p.Won = true;
+                    if (executrix.LoverId != 0)
+                    {
+                        var p2 = GetDBGamePlayer(Players.First(x => x.Id == executrix.LoverId), db);
+                        p2.Won = true;
+                    }
+                    db.SaveChanges();
+                }
+                
+            }
+            else
+            {
+                SendWithQueue(GetLocaleString("ExecutrixFail", executrix.GetName(), target.GetName()));
+                DBKill(executrix, executrix, KillMthd.Suicide);
+            }
+
+            executrix.IsDead = true;
+            executrix.DiedLastNight = true;
+            executrix.TimeDied = DateTime.Now;
+        }
+
 
         public void Dispose()
         {

@@ -116,6 +116,7 @@ namespace Werewolf_Node
             WiseElderConversionChance = 30,
             PacifistConversionChance = 80,
             ThiefStealChance = 50,
+            ExecutrixConversionChance = 20,
 #else
              PlayerCountSeerCursed = 6,
             PlayerCountHarlot = 7,
@@ -159,6 +160,7 @@ namespace Werewolf_Node
             WiseElderConversionChance = 30,
             PacifistConversionChance = 80,
             ThiefStealChance = 100,
+            ExecutrixConversionChance = 20,
 #endif
 
             GameJoinTime = 180,
