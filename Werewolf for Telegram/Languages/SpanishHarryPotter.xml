@@ -245,7 +245,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="WildChildTransform">
     <value>¡{0} fue muerto/a! ¡En un ataque de furia, usted se convierte en un Mortífago! Sus nuevos compañeros son: {1}</value>
   </string><!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter--><string key="Villager">
-    <value>Simple Mago👱</value>
+    <value> Mago👱</value>
   </string><string key="Drunk">
     <value>Horace Slughorn 🍻</value>
   </string><string key="Harlot">
@@ -466,7 +466,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <!-- 1 - idle count -->
     <value>El Mago {0} no votó y fue muerto por eso {1} veces en las últimas 24 horas.</value>
   </string><!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016--><string key="AboutVG">
-    <value>Usted es un simple mago, condenado a pasar sus días estudiando/dando clases en Hogwarts esperando ser asesinado por los Mortífagos, sus enemigos. Una vez al día puedes votar a alguien para mandar a Azkabán, usa tu voto con sabiduría.</value>
+    <value>Usted es un mago, condenado a pasar sus días estudiando/dando clases en Hogwarts esperando ser asesinado por los Mortífagos, sus enemigos. Una vez al día puedes votar a alguien para mandar a Azkabán, usa tu voto con sabiduría.</value>
   </string><string key="AboutSeer">
     <value>Usted es el Profesor de Adivinación, el Clarividente, su papel es guiar a Hogwarts en la cruzada contra los Mortífagos. Durante la noche, puedes elegir a alguien para ver, y tener su papel revelado a ti. ¡Utilize su poder con cautela, porque los Mortífagos están locos por matarte!</value>
   </string><string key="AboutWw">
@@ -508,7 +508,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="AboutBH">
     <value>Usted es Ron Weasley, usted sabrá quién es el verdadero Profesor de Adivinación (y no el Argus Filch). ¡Utiliza esto para ayudar a tu equipo, Hogwarts!</value>
   </string><string key="AboutMason">
-    <value>Usted es un miembro del Ejército de Dumbledore, una sociedad secreta de Magos que se reunieron para ayudar a Hogwarts contra ataques de Mortífagos. Si hay otros del Ejército, usted sabrá su nombre. De lo contrario, usted será un simple mago.</value>
+    <value>Usted es un miembro del Ejército de Dumbledore, una sociedad secreta de Magos que se reunieron para ayudar a Hogwarts contra ataques de Mortífagos. Si hay otros del Ejército, usted sabrá su nombre. De lo contrario, usted será un mago.</value>
   </string><string key="AboutDG">
     <value>Usted es Nymphadora Tonks, una metamorfomaga, capaz de modificar su propia apariencia sin el uso de hechizos o pociones. Escoge a un mago y cuando este muere asumes el papel de él en Hogwarts.</value>
   </string><string key="AboutCupid">
@@ -529,7 +529,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="SentPrivate">
     <value>Te he enviado un Mensaje Privado</value>
   </string><string key="StartPM">
-    <value>Por Favor envíeme un mensaje privado para permitirme enviarte mensajes: @werewolfbot</value>
+    <value>Por favor envíeme un mensaje privado para permitirme enviarte mensajes: @werewolfbot</value>
   </string><string key="PMTrue">
     <value>¡Gracias por activarme! Ahora puedo enviar búhos exclusivos.</value>
   </string><string key="MustReplySmite">
@@ -653,19 +653,19 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><!-- Update 4.0--><string key="RoleInfoMayor">
     <value>Usted es Dumbledore. Su voto durante el juicio para Azkabán contará dos veces, una vez que usted se revele. Usted forma parte del equipo de Hogwarts.</value>
   </string><string key="RoleInfoPrince">
-    <value>Usted es Ginny Weasley, escapandose de su sala comunal, pasa el día entrenando quidditch. Si ellos tratan de enviarla a Azkabán, usted mostrará un vociferador de su madre y nadie será enviado allí.</value>
+    <value>Usted es Fleur Delacour, escapandose de la Academia Beauxbatons, pasa el día mirándose al espejo. Si ellos tratan de enviarla a Azkabán, usará su voz de Veela y nadie será enviado allí.</value>
   </string><string key="RoleInfoClumsyGuy">
     <value>Usted es Neville Longbottom, el desordenado: Usted va a intentar votar, pero hay una probabilidad del 50% de votar a otro mago en vez del que usted pretendía. Aun así, estás en el equipo de Hogwarts, tal vez necesites tu recordadora para votar ...</value>
   </string><string key="RoleInfoSorcerer">
     <value>Usted es Bellatrix Lestrange, la hechicera, y se une a los Mortífagos por la noche, en lugar de los profesores. Por la noche, usted usará su poder para encontrar los Mortífagos o la Vidente. Usted gana solamente si los Mortífagos ganan. Disfruta de ayudar a exterminar a esos miserables alumnos. ¡Los niños traviesos deben ser castigados!</value>
   </string><string key="RoleInfoBlacksmith">
-    <value>Usted es Minerva MacGonagall. Durante los años, siempre ha querido usar una combinación de hechizos y ahora ha surgido la oportunidad. Usted usará el hechizo Protego Totalum que crea una barrera protectora alrededor de Hogwarts. Perfecta para protegerse de los ataques de los Mortífagos.</value>
+    <value>Usted es Ollivander. Durante años, siempre ha estado implicado en la creación de varitas, por lo tanto se convierte en un experto en hechizos. Usted usará el hechizo Protego Totalum que crea una barrera protectora alrededor de Hogwarts. Perfecta para protegerse de los ataques de los Mortífagos.</value>
   </string><string key="RoleInfoAlphaWolf">
     <value>Usted es Lord Voldemort, el origen de todo mal. Su carisma y su poder provoca que los magos deseen pasarse al lado oscuro y ser Mortífagos. Cada noche, usted elegirá a un mago para atacar y matar, pero mientras usted está vivo, su víctima tiene una probabilidad del 20% de que se convierta en un Mortífago.</value>
   </string><string key="RoleInfoWolfCub">
     <value>Usted es Nagini, adorada por su maestro y protegida por los Mortífagos. Usted podrá elegir un Mago para atacar y matar todas las noches. Si te matan, tus protectores al ver tu cuerpo en el suelo, vengarán tu muerte, atacando a dos Magos la noche siguiente.</value>
   </string><string key="PrinceLynched">
-    <value>Hogwarts se está preparando para enviar a {0} a Azkabán, gritando, &quot;¡Esperen! Soy Ginny Weasley. Este vociferador en mi mano, lo demuestra. No puedo ser enviada a Azkabán.&quot; Los alumnos y profesores se sienten tontos, todos en Hogwarts regresan a sus habitaciones.</value>
+    <value>Hogwarts se está preparando para enviar a {0} a Azkabán, gritando, &quot;¡Esperen! Soy Fleur Delacour. Con su voz, lo demuestra. No puedo ser enviada a Azkabán.&quot; Los alumnos y profesores se sienten tontos, todos en Hogwarts regresan a sus habitaciones.</value>
   </string><string key="SorcererOther">
     <value>Usted intenta mirar a {0}, pero no puede descifrar bien lo que es. Todo lo que sabe es que él no es el Profesor de Adivinación ni un Mortífago...</value>
   </string><string key="MayorReveal">
@@ -681,13 +681,13 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="Mayor">
     <value>Dumbledore 🎖</value>
   </string><string key="Prince">
-    <value>Gina Weasley 👑</value>
+    <value>Fleur Delacour 👑</value>
   </string><string key="Sorcerer">
     <value>Bellatrix Lestrange 🔮</value>
   </string><string key="ClumsyGuy">
     <value>Neville Longbottom 🤕</value>
   </string><string key="Blacksmith">
-    <value>Minerva MacGonagall ⚒</value>
+    <value>Ollivander ⚒</value>
   </string><string key="AlphaWolf">
     <value>Voldemort ⚡️</value>
   </string><string key="WolfCub">
@@ -701,13 +701,13 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="AboutMayor">
     <value>Usted es Dumbledore. Su voto durante el juicio para Azkabán contará dos veces, una vez que usted se revele. Usted forma parte del equipo de Hogwarts.</value>
   </string><string key="AboutPrince">
-    <value>Ginny Weasley es una parte importante del equipo de Hogwarts. Así que si tratan de mandarla a Azkabán, ella mostrará un vociferador de su madre, recordando al pueblo quien es. Así, sólo podrá ser muerta durante la noche, o por Harry Potter.</value>
+    <value>Fleur Delacour es una parte importante del equipo de Hogwarts. Así que si tratan de mandarla a Azkabán, ella usará su voz de Veela, recordando al pueblo quien es. Así, sólo podrá ser muerta durante la noche, o por Harry Potter.</value>
   </string><string key="AboutSorcerer">
     <value>¿Recuerdas la buena y vieja Vidente? Bueno, ahora los Mortífagos tienen una, y es Bellatrix Lestrange. Sólo puede ver a los Mortífagos y al Profesor de Adivinación, y es del equipo de los Mortífagos.</value>
   </string><string key="AboutClumsy">
     <value>Usted es Neville Longbottom. Usted no debería haber bebido tanto por la mañana. Ahora no puedes ver nada. ¿Podrás votar a la persona adecuada a la hora de mandar a alguien a Azkabán? (Usted tiene una probabilidad de 50% de votar en la persona equivocada)</value>
   </string><string key="AboutBlacksmith">
-    <value>Usted es Minerva MacGonagall. Durante los años, siempre ha querido usar una combinación de hechizos y ahora ha surgido la oportunidad. Usted usará el hechizo Protego Totalum que crea una barrera protectora alrededor de Hogwarts. Perfecta para protegerse de los ataques de los Mortífagos.</value>
+    <value>Usted es Ollivander. Durante años, siempre ha estado implicado en la creación de varitas, por lo tanto se convierte en un experto en hechizos. Usted usará el hechizo Protego Totalum que crea una barrera protectora alrededor de Hogwarts. Perfecta para protegerse de los ataques de los Mortífagos.</value>
   </string><string key="AboutAlphaWolf">
     <value>Usted es Lord Voldemort, el origen de todo mal. Su carisma y su poder provoca que los magos deseen pasarse al lado oscuro y ser Mortífagos. Cada noche, usted elegirá a un mago para atacar y matar, pero mientras usted está vivo, su víctima tiene una probabilidad del 20% de que se convierta en un Mortífago.</value>
   </string><string key="AboutWolfCub">
@@ -757,7 +757,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="ApprenticeSeerEaten">
     <value>Hogwarts despierta y encuentra el cuerpo de Firenze todo ensangrentado, es un día triste en la escuela... ¡{0} murió!</value>
   </string><string key="BlacksmithKilled">
-    <value>Parece que {0}, Minerva McGonagall, tuvo mucha mala suerte. Se encontraron marcas de hechizos en su cuerpo. Y varias varitas desaparecieron, ¡Gellert Grindelwald tuvo su fiesta!</value>
+    <value>Parece que {0}, Ollivander, tuvo mucha mala suerte. Se encontraron marcas de hechizos en su cuerpo. Y varias varitas desaparecieron, ¡Gellert Grindelwald tuvo su fiesta!</value>
   </string><string key="CultistKilled">
     <value>Por la mañana todos encuentran el manto de {0}. Gellert Grindelwald no le importa detalles como la raza, ¡Todos son experimentos para él! Los dementores perdieron a {0}...</value>
   </string><string key="CupidKilled">
@@ -771,7 +771,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="MayorKilled">
     <value>¡Ha habido un terrible asesinato! {0}, ¡Dumbledore fue encontrado cerca de la torre de Astronomía! Gellert Grindelwald finalmente logró venganza todos esos años en prisión.</value>
   </string><string key="PrinceKilled">
-    <value>Los gritos son escuchados por todo Hogwarts antes de la salida del sol. Los hermanos Weasley están en todo lugar investigando la muerte de {0}, Ginny Weasley. Y ninguna pista fue encontrada todavía, además del vociferador ensangrentado en la mano de Ginny, con la leyenda en sangre &quot;Gellert Grindwald&quot; en la pared.</value>
+    <value>Los gritos son escuchados por todo Hogwarts antes de la salida del sol. Bill Weasley está en todo lugar investigando la muerte de {0}, Fleur Delacour. Y ninguna pista fue encontrada todavía, además del vociferador ensangrentado en la mano de Fleur, con la leyenda en sangre &quot;Gellert Grindwald&quot; en la pared.</value>
   </string><string key="SeerKilled">
     <value>Hogwarts se despierta para ver el cuerpo de {0}, El Profesor de Adivinación, muerto. En su mano, una taza con una sonrisa macabra dibujada en su fondo. Gellert Grindelwald ha vuelto a atacar.</value>
   </string><string key="SorcererEaten">
@@ -840,7 +840,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="AllowCult">
     <value>Permitir Dementores</value>
   </string><string key="AllowTanner">
-    <value>Perimitir Snape</value>
+    <value>Permitir Snape</value>
   </string><string key="AllowFool">
     <value>Permitir Argus Filch</value>
   </string><string key="EnableSecretLynch">
@@ -870,3 +870,64 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="TimesKilledBy">
     <value>Veces que recibió un Avada Kedavra por</value>
   </string></strings>
+  </string><!--Nuevas lineas 04/09/2018--><string key="AskSandman">
+    <value>¿Quieres dormir a los alumnos esta noche?</value>
+  </string><string key="SandmanSleepAll">
+    <value>Mientras los magos discuten, {0} el Profesor Binns abre su libro y se dispone a dar una de sus interminables lecciones. Esta noche, todos caerán en un sueño profundo, y nadie podrá realizar acciones nocturnas.</value>
+  </string><string key="SandmanNight">
+    <value>Cae la noche y los magos apenas llegan a sus camas por el agotamiento. Se quedan dormidos profundamente, ni siquiera recuerdan haberse ido a dormir…</value>
+  </string><string key="AskPacifist">
+    <value>¿Quieres evitar que se linche esta noche?</value>
+  </string><string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+    <value>Ginny Weasly, {0}, está dando un emotivo discurso de paz, amor y amistad en la sala común. Conmovidos por su retórica, los magos deciden no linchar a nadie esta noche.</value>
+  </string><string key="PacifistNoLynchNow">
+    <value>A causa del enternecedor discurso de Ginny Weasly, no habrá linchamientos por hoy.</value>
+   </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Intentasteis entrar en el despacho de {0}, ¡pero desgraciadamente la Profesora McGonagall se encontraba ahí! {0} impidió con éxito el ataque, pero, afortunadamente, no han reconocido a ninguno de vosotros.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Los mortífagos te han matadp con un Adava Kedavra, pero por desgracia no reconociste a ninguno de los atacantes.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Harry Potter, {0}, disparó a la Profesora McGonagall 📚, {1}. {0} solloza con gran tristeza, lamentando su grave error, que le ha hecho perder sus habilidades de Harry Potter. Ha muerto como un simple mago.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Sirius Black 🔫, {0} disparó a la Profesora McGonagall 📚, {1}. {0} solloza con gran tristeza, lamentando su grave error, y decide retirarse, lo que lo convierte en un simple mago.</value>
+  </string><string key="RoleInfoWolfMan">
+    <value>Eres Rubeus Hagrid, guardián de las llaves de Hogwarts y un apasionado de las criaturas peligrosas. Debido a tu monstruosa companía, el Profesor de adivinación puede verte como un Mortífago.</value>
+  </string><string key="RoleInfoWiseElder">
+    <value>Eres la profesora McGonagall, profesora de Transformaciones de Hogwarts, severa y respetada pero gran persona. Amante de la rama de Transformaciones y los gatos, tiene un conocimiento de la magia superior a la media. Si los mortífagos deciden matarla, tiene una única oportunidad de salvarse. Además si Sirius Black o Harry Potter la matan, perderán sus poderes.</value>                                              
+  </string><string key="RoleInfoSandman">
+    <value>Te despiertas encarnado en el cuerpo de un fantasma, ves en tu escritorio los apuntes de Historia de la Magia, oh no, eres el profesor Binns. A causa de tus interminables lecciones podrás dormir a todos los magos una noche, salvándolos así del ataque de los mortífagos esa noche.</value>
+  </string><string key="RoleInfoOracle">
+    <value>Eres Alastor Moody. Como experto auror, cada noche podrás elegir a alguien para ver lo que NO es. Verás el rol de otro que esté vivo todavía, así que presta atención al rol, porque significa que aún queda uno de ellos.</value> 
+  </string><string key="RoleInfoPacifist">
+    <value>El espiritu pacifista ha recalado en ti, te has convertido en Ginny Weasly. Una vez durante el juego podras evitar que los magos se linchen entre ellos.</value>
+  </string><string key="WolfMan">
+    <value>Hagrid 👱🌚</value>
+  </string><string key="WiseElder">
+    <value>Profesora McGonagall 📚</value>
+  </string><string key="Oracle">
+     <value>Alastor Moody 🌀</value>
+  </string><string key="Sandman">
+     <value>Profesor Binns 💤</value>
+  </string><string key="Pacifist">
+     <value>Ginny Weasly ☮️</value>
+  </string><string key="AboutSandman">
+    <value>Te despiertas encarnado en el cuerpo de un fantasma, ves en tu escritorio los apuntes de Historia de la Magia, oh no, eres el profesor Binns. A causa de tus interminables lecciones podrás dormir a todos los magos una noche, salvándolos así del ataque de los mortífagos esa noche.</value>
+  </string><string key="AboutWiseElder">
+    <value>Eres la profesora McGonagall, profesora de Transformaciones de Hogwarts, severa y respetada pero gran persona. Amante de la rama de Transformaciones y los gatos, tiene un conocimiento de la magia superior a la media. Si los mortífagos deciden matarla, tiene una única oportunidad de salvarse. Además si Sirius Black o Harry Potter la matan, perderán sus poderes.</value>
+  </string><string key="AboutWolfMan">
+    <value>Eres Rubeus Hagrid, guardián de las llaves de Hogwarts y un apasionado de las criaturas peligrosas. Debido a tu monstruosa companía, el Profesor de adivinación puede verte como un Mortífago.</value>
+  </string><string key="AboutOracle">
+    <value>Eres Alastor Moody. Como experto auror, cada noche podrás elegir a alguien para ver lo que NO es. Verás el rol de otro que esté vivo todavía, así que presta atención al rol, porque significa que aún queda uno de ellos.</value> 
+  </string><string key="AboutPacifist">
+    <value>El espiritu pacifista ha recalado en ti, te has convertido en Ginny Weasly. Una vez durante el juego podras evitar que los magos se linchen entre ellos.</value>
+</strings>
